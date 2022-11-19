@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="shoe_text">Shoe Name</string>
+    <string name="size_text">size</string>
+    <string name="shoe_company_text">shoe company</string>
+    <string name="shoe_description_text">shoe description</string>
+    <string name="save_button">save</string>
+    <string name="cancel_button">cancel</string>
+    <string name="add_new_shoe">add shoe</string>
+    <string name="add">add</string>
+</resources>
