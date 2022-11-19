@@ -5,24 +5,24 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.myapplication.databinding.ActivityMainBinding
-import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    val noarrowback = setOf(
+        R.id.loginFragment,
+        R.id.welcomeFragment,
+        R.id.instrucationsFragment
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         val navController = findNavController(R.id.myNavHostFragment)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar).setupWithNavController(navController, appBarConfiguration)
+        val appBarConfiguration = AppBarConfiguration(noarrowback)
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        Timber.plant(Timber.DebugTree())
     }
-
-
 }
